@@ -25,7 +25,7 @@ import traceback
 import pdfmerge
 from subprocess import Popen
 
-def generar(reemplazos,nombre,cedula,evento,contador):
+def generar(reemplazos,nombre,cedula,contador):
     """
     Genera el certificado en formato pdf.
     """
@@ -48,11 +48,13 @@ def generar(reemplazos,nombre,cedula,evento,contador):
     #x = Popen(['rm', certsalidat]) # Eliminación de archivos temporales    
     os.chdir("..") # Retrocediento un directorio para conseguir a la carpeta utils
 
+print "\n** Generador de certificados pdf usando una plantilla svg a través de inkscape **\n"
+evento = raw_input ("Siglas del evento/curso: ")
+
 def main():
     """
     Función que recolecta los datos y los envía a la función de generación.
     """
-    print "\n** Generador de certificados pdf usando una plantilla svg a través de inkscape **\n"
     folder = raw_input ("Nombre de la carpeta donde se van a guardar los certificados: ")
     if not os.path.exists(folder):
         os.makedirs(folder)
@@ -65,12 +67,11 @@ def main():
                     continue
                 nombre = row[0] # Columna 1 que corresponde a Nombre y Apellido.
                 cedula = row[1] # Columna 2 que corresponde a las cédulas de identidad.
-                evento = row[2] # Columna 3 que corresponde al evento.
-                # Variables de sustitución: nombre, cédula y siglas del evento
-                reemplazos = {'nombre_del_participante':nombre, 'cedula':cedula, 'evento':evento,}
+                # Variables de sustitución: nombre, cédula.
+                reemplazos = {'nombre_del_participante':nombre, 'cedula':cedula,}
                 contador = contador + 1 # Contador que se agrega al nombre temporal del svg
                 os.chdir(folder) # Navegando hasta el directorio donde se van a guardar los certificados
-                generar(reemplazos,nombre,cedula,evento,contador)  #Función de generación de certificados
+                generar(reemplazos,nombre,cedula,contador)  #Función de generación de certificados
         listado.close()
         print("\n----------\n")
         print("¡Finalizó el proceso! Total de certificados generados: " + str(contador) + "\n")
