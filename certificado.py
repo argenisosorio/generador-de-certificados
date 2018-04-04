@@ -25,7 +25,7 @@ import traceback
 import pdfmerge
 from subprocess import Popen
 
-def generar(reemplazos,nombre,cedula,contador):
+def generar(reemplazos,nombre,cedula,rol,contador):
     """
     Genera el certificado en formato pdf.
     """
@@ -50,6 +50,7 @@ def generar(reemplazos,nombre,cedula,contador):
 
 print "\n** Generador de certificados pdf usando una plantilla svg a través de inkscape **\n"
 evento = raw_input ("Siglas del evento/curso: ")
+rol = raw_input ("Escriba el rol de los participantes: ")
 
 def main():
     """
@@ -61,17 +62,18 @@ def main():
     try:
         contador = 0
         with open('utils/participantes.csv', 'r') as listado: #Lectura de participantes
-            datos = csv.reader(listado, delimiter=',')
+            datos = csv.reader(listado, delimiter=',') # Separar la data por coma.
+            #datos = csv.reader(listado, delimiter=';') # Separar la data por punto y coma.
             for row in datos:
                 if row[0].startswith('#'): # Permite comentar líneas en el archivo csv.
                     continue
                 nombre = row[0] # Columna 1 que corresponde a Nombre y Apellido.
                 cedula = row[1] # Columna 2 que corresponde a las cédulas de identidad.
                 # Variables de sustitución: nombre, cédula.
-                reemplazos = {'nombre_del_participante':nombre, 'cedula':cedula,}
+                reemplazos = {'nombre_del_participante':nombre, 'cedula':cedula, 'Rol':rol,}
                 contador = contador + 1 # Contador que se agrega al nombre temporal del svg
                 os.chdir(folder) # Navegando hasta el directorio donde se van a guardar los certificados
-                generar(reemplazos,nombre,cedula,contador)  #Función de generación de certificados
+                generar(reemplazos,nombre,cedula,rol,contador)  #Función de generación de certificados
         listado.close()
         print("\n----------\n")
         print("¡Finalizó el proceso! Total de certificados generados: " + str(contador) + "\n")
