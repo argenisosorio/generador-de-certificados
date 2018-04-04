@@ -25,36 +25,27 @@ import traceback
 import pdfmerge
 from subprocess import Popen
 
-def generar(reemplazos,rol,cedula,nombre,contador):
+def generar(reemplazos,nombre,cedula,evento,contador):
     """
     Genera el certificado en formato pdf.
     """
-    tiempo = str(int(time.time()))                      #Para el nombre temporal
-    nombretmp = '/tmp/' + tiempo + str(contador) + '.certificado.svg'    #Nombre único temporal del svg modificado
-
+    tiempo = str(int(time.time())) # Para el nombre temporal
+    nombretmp = '/tmp/' + tiempo + str(contador) + '.certificado.svg' # Nombre único temporal del svg modificado
     with open('../utils/certificado.svg', 'r') as entrada, open(nombretmp, 'w') as salida:
-        for line in entrada:                            #Reemplazo de variables en el archivo svg
+        for line in entrada: # Reemplazo de variables en el archivo svg
             for src, target in reemplazos.iteritems():
                 line = line.replace(src, target)
             salida.write(line)
     entrada.close()
     salida.close()
-
-    certsalidat = '/tmp/'+nombre+'-''.pdf'         #Nombre de pdf temporal
-    certsalida = cedula+'-'+nombre+'-''.pdf'                    #Nombre del certificado pdf final
-
-    #print(str(contador) + " Generando certificado de " + rol + " para " + nombre)
+    certsalidat = '/tmp/'+cedula+'-''.pdf' # Nombre de pdf temporal
+    certsalida = cedula+'-'+evento+'-''.pdf' # Nombre del certificado pdf final
     print("-" + str(contador) + " Generando certificado"  " para " + nombre)
-    x = Popen(['/usr/bin/inkscape', nombretmp, '-A', certsalida])  #Generación del certificado temporal.
-
-    #print("Añadiendo programa al certificado ")
-    #time.sleep(5)
-    #pdfmerge.merge([certsalidat, 'programa.pdf'], certsalida)   #Se añade el programa al certificado y se genera el certificado final
-
+    x = Popen(['/usr/bin/inkscape', nombretmp, '-A', certsalida]) # Generación del certificado temporal.
     print("\n-Removiendo archivos temporales...\n")
     time.sleep(5)
-    x = Popen(['rm', nombretmp])                        #Eliminación de archivos temporales
-    #x = Popen(['rm', certsalidat])                      #Eliminación de archivos temporales    
+    x = Popen(['rm', nombretmp]) # Eliminación de archivos temporales
+    #x = Popen(['rm', certsalidat]) # Eliminación de archivos temporales    
     os.chdir("..") # Retrocediento un directorio para conseguir a la carpeta utils
 
 def main():
@@ -70,22 +61,16 @@ def main():
         with open('utils/participantes.csv', 'r') as listado: #Lectura de participantes
             datos = csv.reader(listado, delimiter=',')
             for row in datos:
-                if row[0].startswith('#'):              #Permite comentar líneas en el archivo csv
+                if row[0].startswith('#'): # Permite comentar líneas en el archivo csv.
                     continue
-                nombre = row[0]                         #Columna 1 corresponden a Nombre y Apellido
-                cedula = row[1]    
-                rol = row[2]                        #Columna 2 corresponde a la cédula
-                # if row[3]=='0':                    #Columna 4 corresponde a un código de participación
-                   # rol = 'ponente'
-                #if row[3]=='1':
-                  # rol = 'organizador'
-                #if row[3]=='2':
-                   #rol = 'Asistente'
-                # Variables de sustitución: Nombre, cédula, rol, título del evento (1ra línea), título del evento (2da línea) y fecha
-                reemplazos = {'nombre_del_participante':nombre, 'cedula':cedula, 'Rol':'Asistente'}
-                contador = contador + 1                 #Contador que se agrega al nombre temporal del svg
+                nombre = row[0] # Columna 1 que corresponde a Nombre y Apellido.
+                cedula = row[1] # Columna 2 que corresponde a las cédulas de identidad.
+                evento = row[2] # Columna 3 que corresponde al evento.
+                # Variables de sustitución: nombre, cédula y siglas del evento
+                reemplazos = {'nombre_del_participante':nombre, 'cedula':cedula, 'evento':evento,}
+                contador = contador + 1 # Contador que se agrega al nombre temporal del svg
                 os.chdir(folder) # Navegando hasta el directorio donde se van a guardar los certificados
-                generar(reemplazos,rol,cedula,nombre,contador)  #Función de generación de certificados
+                generar(reemplazos,nombre,cedula,evento,contador)  #Función de generación de certificados
         listado.close()
         print("\n----------\n")
         print("¡Finalizó el proceso! Total de certificados generados: " + str(contador) + "\n")
