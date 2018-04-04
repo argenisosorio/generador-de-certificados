@@ -51,7 +51,6 @@ def generar(reemplazos,nombre,cedula,rol,contador):
 print "\n** Generador de certificados pdf usando una plantilla svg a través de inkscape **\n"
 evento = raw_input ("Siglas del evento/curso: ")
 rol = raw_input ("Escriba el rol de los participantes: ")
-id_id = 1
 
 def main():
     """
