@@ -75,7 +75,7 @@ def main():
                 cedula = row[1] # Columna 2 que corresponde a las cédulas de identidad.
                 alist.append(cedula) # Agregando el valor de cédula a una lista.
                 alist.append(evento) # Agregando el valor del evento.
-                alist.append(cedula+"-"+evento+"-.pdf") # Agregando el nombre del fichero generado.
+                alist.append(folder+"/"+cedula+"-"+evento+"-.pdf") # Agregando el nombre del fichero generado.
                 alist.append(0)
                 alist.append("---") # Agregando esta cadena para luega hacer el salto de línea.
                 contador2 = contador2 + 1
