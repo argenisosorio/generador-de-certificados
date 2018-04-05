@@ -39,7 +39,7 @@ def generar(reemplazos,nombre,cedula,rol,contador):
     entrada.close()
     salida.close()
     certsalidat = '/tmp/'+cedula+'-''.pdf' # Nombre de pdf temporal
-    certsalida = cedula+'-'+evento+'-''.pdf' # Nombre del certificado pdf final
+    certsalida = cedula+'-'+siglas_evento+'-''.pdf' # Nombre del certificado pdf final
     print("-" + str(contador) + " Generando certificado"  " para " + nombre)
     x = Popen(['/usr/bin/inkscape', nombretmp, '-A', certsalida]) # Generación del certificado temporal.
     print("\n-Removiendo archivos temporales...\n")
@@ -49,7 +49,8 @@ def generar(reemplazos,nombre,cedula,rol,contador):
     os.chdir("..") # Retrocediento un directorio para conseguir a la carpeta utils
 
 print "\n** Generador de certificados pdf usando una plantilla svg a través de inkscape **\n"
-evento = raw_input ("Siglas del evento/curso: ")
+evento = raw_input ("Escriba el nombre del evento/curso: ")
+siglas_evento = raw_input ("Siglas del evento/curso: ")
 rol = raw_input ("Escriba el rol de los participantes: ")
 
 def main():
@@ -75,7 +76,7 @@ def main():
                 cedula = row[1] # Columna 2 que corresponde a las cédulas de identidad.
                 alist.append(cedula) # Agregando el valor de cédula a una lista.
                 alist.append(evento) # Agregando el valor del evento.
-                alist.append(folder+"/"+cedula+"-"+evento+"-.pdf") # Agregando el nombre del fichero generado.
+                alist.append(folder+"/"+cedula+"-"+siglas_evento+"-.pdf") # Agregando el nombre del fichero generado.
                 alist.append(0)
                 alist.append("---") # Agregando esta cadena para luega hacer el salto de línea.
                 contador2 = contador2 + 1
