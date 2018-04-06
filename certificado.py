@@ -78,7 +78,7 @@ def main():
                 alist.append(evento) # Agregando el valor del evento.
                 alist.append(folder+"/"+cedula+"-"+siglas_evento+"-.pdf") # Agregando el nombre del fichero generado.
                 alist.append(0)
-                alist.append("---") # Agregando esta cadena para luega hacer el salto de línea.
+                alist.append("\n") # Agregando esta cadena para luega hacer el salto de línea.
                 contador2 = contador2 + 1
 
                 # Variables de sustitución: nombre, cédula.
