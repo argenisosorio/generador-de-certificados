@@ -39,7 +39,7 @@ def generar(reemplazos,nombre,cedula,rol,contador):
     entrada.close()
     salida.close()
     certsalidat = '/tmp/'+cedula+'-''.pdf' # Nombre de pdf temporal
-    certsalida = cedula+'-'+siglas_evento+'.pdf' # Nombre del certificado pdf final
+    certsalida = cedula+'-'+siglas_evento+"-"+rol+'.pdf' # Nombre del certificado pdf final
     print("-" + str(contador) + " Generando certificado"  " para " + nombre)
     x = Popen(['/usr/bin/inkscape', nombretmp, '-A', certsalida]) # Generación del certificado temporal.
     print("\n-Removiendo archivos temporales...\n")
@@ -51,7 +51,7 @@ def generar(reemplazos,nombre,cedula,rol,contador):
 print "\n** Generador de certificados pdf usando una plantilla svg a través de inkscape **\n"
 evento = raw_input ("Escriba el nombre del evento/curso: ")
 siglas_evento = raw_input ("Siglas del evento/curso: ")
-rol = raw_input ("Escriba el rol de los participantes: ")
+#rol = raw_input ("Escriba el rol de los participantes: ")
 
 def main():
     """
@@ -74,9 +74,18 @@ def main():
                 nombre = row[0] # Columna 1 que corresponde a Nombre y Apellido.
                 alist.append(nombre) # Agregando el valor de nombre a una lista.
                 cedula = row[1] # Columna 2 que corresponde a las cédulas de identidad.
+                #print row[2]
+                #rol = 'Asistente'
+                if row[2]=='0': # Columna 3 corresponde a un código de participación
+                    rol = 'Ponente'
+                if row[2]=='1':
+                    rol = 'Organizador'
+                if row[2]=='2':
+                    rol = 'Asistente'
                 alist.append(cedula) # Agregando el valor de cédula a una lista.
                 alist.append(evento) # Agregando el valor del evento.
-                alist.append(folder+"/"+cedula+"-"+siglas_evento+"-.pdf") # Agregando el nombre del fichero generado.
+                alist.append(rol) # Agregando el valor del evento.
+                alist.append(folder+"/"+cedula+"-"+siglas_evento+"-"+rol+".pdf") # Agregando el nombre del fichero generado.
                 alist.append(0)
                 alist.append("\n") # Agregando esta cadena para luega hacer el salto de línea.
                 contador2 = contador2 + 1
