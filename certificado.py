@@ -39,7 +39,7 @@ def generar(reemplazos,nombre,cedula,rol,contador):
     entrada.close()
     salida.close()
     certsalidat = '/tmp/'+cedula+'-''.pdf' # Nombre de pdf temporal
-    certsalida = cedula+'-'+siglas_evento+'-''.pdf' # Nombre del certificado pdf final
+    certsalida = cedula+'-'+siglas_evento+'.pdf' # Nombre del certificado pdf final
     print("-" + str(contador) + " Generando certificado"  " para " + nombre)
     x = Popen(['/usr/bin/inkscape', nombretmp, '-A', certsalida]) # Generación del certificado temporal.
     print("\n-Removiendo archivos temporales...\n")
