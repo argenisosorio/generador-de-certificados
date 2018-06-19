@@ -176,8 +176,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="184.12094"
-     inkscape:cy="414.50839"
+     inkscape:cx="703.56201"
+     inkscape:cy="394.5981"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -253,8 +253,8 @@
        id="rect6979"
        width="396.34583"
        height="334.02444"
-       x="-46.542667"
-       y="21.576544"
+       x="-57.65517"
+       y="28.984877"
        ry="0.49087262"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
@@ -2057,36 +2057,42 @@
     <text
        id="text5186"
        y="163.11787"
-       x="139.76521"
-       style="font-style:normal;font-weight:normal;font-size:3.17499995px;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.87498951px;line-height:1.25;font-family:'AvantGarde Md BT';-inkscape-font-specification:'AvantGarde Md BT Italic';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+       x="139.75508"
+       style="font-size:3.17499995px;font-style:normal;font-weight:normal;text-align:center;line-height:0%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+       xml:space="preserve"
+       sodipodi:linespacing="0%"><tspan
+         style="font-size:11.87498951px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:1.25;text-anchor:middle;font-family:AvantGarde Md BT;-inkscape-font-specification:AvantGarde Md BT Italic"
          y="163.11787"
-         x="139.76521"
+         x="139.75508"
          id="tspan5184"
          sodipodi:role="line">nombre_del_participante</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.17499995px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="116.62357"
-       y="177.89038"
-       id="text6679"><tspan
-         style="font-size:5.81656933px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke-width:0.26458332"
-         sodipodi:role="line"
-         id="tspan6677"
+    <g
+       id="g3355"
+       transform="translate(2.3632487,0)">
+      <text
+         sodipodi:linespacing="0%"
+         id="text6679"
+         y="177.89038"
          x="116.62357"
-         y="177.89038">C.I. V-</tspan></text>
-    <text
-       id="text5194"
-       y="178.14037"
-       x="131.8708"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.3499999px;line-height:2;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.26458332"
-         y="178.14037"
-         x="131.8708"
-         id="tspan5192"
-         sodipodi:role="line">  cedula</tspan></text>
+         style="font-size:3.17499995px;font-style:normal;font-weight:normal;line-height:0%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif"
+         xml:space="preserve"><tspan
+           y="177.89038"
+           x="116.62357"
+           id="tspan6677"
+           sodipodi:role="line"
+           style="font-size:5.81656933px;line-height:1.25;fill:#000000;fill-opacity:1;font-family:sans-serif">C.I: V-</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:6.3499999px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:2;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:sans-serif;-inkscape-font-specification:sans-serif Bold"
+         x="130.18701"
+         y="177.95328"
+         id="text5194"><tspan
+           sodipodi:role="line"
+           id="tspan5192"
+           x="130.18701"
+           y="177.95328"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif Bold">  cedula</tspan></text>
+    </g>
     <text
        id="text178905"
        y="189.36635"
