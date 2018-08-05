@@ -6,7 +6,7 @@ Basado en: [Generador en masa de certificados en pdf by David Hernández](https:
 
 1) Descargar el proyecto, nos quedará el fichero comprimido generador-de-certificados-master.zip
 
-2) Lo descomprimimos y nos quedara la carpeta generador-de-certificados-master que contiene lo siguiente:
+2) Lo descomprimimos y nos quedara la carpeta generador-de-certificados que contiene lo siguiente:
 
 - certificado.py, que es el script para generar los certificados.
 - La carpeta "utils" que tiene la plantilla .svg del certificado y un fichero .csv que contiene la lista de participantes.
@@ -23,6 +23,10 @@ Los valores de la columna Rol que es la tercera pueden ser:
 * 0 es Ponente
 * 1 es Organizador
 * 2 es Asistente
+
+## Paquetes de Python requeridos
+
+pdfmerge
 
 ## Probar el generador de certificados
 ```
