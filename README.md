@@ -16,7 +16,7 @@ El siguiente es un ejemplo del fichero .csv que contiene los datos de los partic
 #nombre,cedula,rol
 José Morales,8035497,0
 Karla Perez,16789145,1
-Carlos Parra,15796551,3
+Carlos Parra,15796551,2
 ```
 Los valores de la columna Rol que es la tercera pueden ser:
 
