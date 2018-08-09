@@ -4,6 +4,22 @@ Basado en: [Generador en masa de certificados en pdf by David Hernández](https:
 
 ## Documentación
 
+<b>Nota:</b>
+<br />
+Usaremos $ para describir los comandos que se usaran con usuario regular.
+
+Usaremos # para describir los comandos que se usaran con superusuario. 
+
+## Paquetes de Python requeridos
+
+pdfmerge, lo instalamos con:
+
+```
+# apt-install python-pip
+
+$ pip install pdfmerge
+```
+
 1) Descargar el proyecto, nos quedará el fichero comprimido generador-de-certificados-master.zip
 
 2) Lo descomprimimos y nos quedara la carpeta generador-de-certificados que contiene lo siguiente:
@@ -23,10 +39,6 @@ Los valores de la columna Rol que es la tercera pueden ser:
 * 0 es Ponente
 * 1 es Organizador
 * 2 es Asistente
-
-## Paquetes de Python requeridos
-
-pdfmerge
 
 ## Probar el generador de certificados
 ```
