@@ -24,7 +24,7 @@ Los valores de la columna Rol que es la tercera pueden ser:
 * 1 es Organizador
 * 2 es Asistente
 
-## Probar el generador de certificados
+### Probar el generador de certificados
 <b>Nota:</b>
 <br />
 Usaremos $ para describir los comandos que se usaran con usuario regular.
