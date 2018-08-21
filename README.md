@@ -20,9 +20,13 @@ Carlos Parra,15796551,2
 ```
 Los valores de la columna Rol que es la tercera pueden ser:
 
-* 0 es Ponente
-* 1 es Organizador
-* 2 es Asistente
+* 0 es Profesor
+* 1 es Estudiante
+* 2 es Facilitador
+* 3 es Asistente
+* 4 es Ponente
+* 5 es Organizador
+* 6 es Colaborador
 
 ### Probar el generador de certificados
 <b>Nota:</b>

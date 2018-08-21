@@ -77,11 +77,19 @@ def main():
                 #print row[2]
                 #rol = 'Asistente'
                 if row[2]=='0': # Columna 3 corresponde a un código de participación
-                    rol = 'Ponente'
+                    rol = 'Profesor'
                 if row[2]=='1':
-                    rol = 'Organizador'
+                    rol = 'Estudiante'
                 if row[2]=='2':
+                    rol = 'Facilitador'
+                if row[2]=='3':
                     rol = 'Asistente'
+                if row[2]=='4':
+                    rol = 'Ponente'
+                if row[2]=='5':
+                    rol = 'Organizador'
+                if row[2]=='6':
+                    rol = 'Colaborador'
                 alist.append(cedula) # Agregando el valor de cédula a una lista.
                 alist.append(evento) # Agregando el valor del evento.
                 alist.append(rol) # Agregando el valor del evento.
