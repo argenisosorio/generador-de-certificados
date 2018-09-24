@@ -49,17 +49,17 @@ def generar(reemplazos,nombre,cedula,rol,contador):
     os.chdir("..") # Retrocediento un directorio para conseguir a la carpeta utils
 
 print "\n** Generador de certificados pdf usando una plantilla svg a través de inkscape **\n"
-evento = raw_input ("Escriba el nombre del evento/curso: ")
-siglas_evento = raw_input ("Siglas del evento/curso: ")
+evento = raw_input ("Escriba el nombre del evento/curso, ejemplo: Foro de Seguridad Informática: ")
+siglas_evento = raw_input ("Escriba las siglas del evento/curso, más el mes y el año separado por guión, ejemplo: fsi-09-18: ")
 #rol = raw_input ("Escriba el rol de los participantes: ")
 
 def main():
     """
     Función que recolecta los datos y los envía a la función de generación.
     """
-    folder = raw_input ("Nombre de la carpeta donde se van a guardar los certificados: ")
-    if not os.path.exists(folder):
-        os.makedirs(folder)
+    #siglas_evento = raw_input ("Nombre de la carpeta donde se van a guardar los certificados: ")
+    if not os.path.exists(siglas_evento):
+        os.makedirs(siglas_evento)
     try:
         contador = 0
         contador2 = 0
@@ -93,7 +93,7 @@ def main():
                 alist.append(cedula) # Agregando el valor de cédula a una lista.
                 alist.append(evento) # Agregando el valor del evento.
                 alist.append(rol) # Agregando el valor del evento.
-                alist.append(folder+"/"+cedula+"-"+siglas_evento+"-"+rol+".pdf") # Agregando el nombre del fichero generado.
+                alist.append(siglas_evento+"/"+cedula+"-"+siglas_evento+"-"+rol+".pdf") # Agregando el nombre del fichero generado.
                 alist.append(0)
                 alist.append("\n") # Agregando esta cadena para luega hacer el salto de línea.
                 contador2 = contador2 + 1
@@ -101,7 +101,7 @@ def main():
                 # Variables de sustitución: nombre, cédula.
                 reemplazos = {'nombre_del_participante':nombre, 'cedula':cedula, 'Rol':rol,}
                 contador = contador + 1 # Contador que se agrega al nombre temporal del svg
-                os.chdir(folder) # Navegando hasta el directorio donde se van a guardar los certificados
+                os.chdir(siglas_evento) # Navegando hasta el directorio donde se van a guardar los certificados
                 mylist = alist
                 # Ahora vamos a crear/escribir en data_final.csv los datos de la lista alist.
                 with open('data_final.csv', 'wb') as myfile:
