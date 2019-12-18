@@ -23,7 +23,9 @@ import time
 import sys
 import traceback
 import pdfmerge
+import pprint
 from subprocess import Popen
+import itertools
 
 def generar(reemplazos,nombre,cedula,rol,contador):
     """
@@ -62,7 +64,7 @@ def main():
         os.makedirs(siglas_evento)
     try:
         contador = 0
-        contador2 = 0
+        contador2 = 1
         with open('utils/participantes.csv', 'r') as listado: # Lectura de participantes desde un .csv
             datos = csv.reader(listado, delimiter=',') # Separar la data por coma.
             #datos = csv.reader(listado, delimiter=';') # Separar la data por punto y coma.
@@ -70,7 +72,7 @@ def main():
             for row in datos:
                 if row[0].startswith('#'): # Permite comentar líneas en el archivo csv.
                     continue
-                alist.append(contador2) # Valor que va a tener el campo id del data_final.csv
+                #alist.append(contador2) # Valor que va a tener el campo id del data_final.csv
                 nombre = row[0] # Columna 1 que corresponde a Nombre y Apellido.
                 alist.append(nombre) # Agregando el valor de nombre a una lista.
                 cedula = row[1] # Columna 2 que corresponde a las cédulas de identidad.
@@ -91,11 +93,11 @@ def main():
                 if row[2]=='6':
                     rol = 'Colaborador'
                 alist.append(cedula) # Agregando el valor de cédula a una lista.
-                alist.append(evento) # Agregando el valor del evento.
-                alist.append(rol) # Agregando el valor del evento.
-                alist.append(siglas_evento+"/"+cedula+"-"+siglas_evento+"-"+rol+".pdf") # Agregando el nombre del fichero generado.
-                alist.append(0)
-                alist.append("\n") # Agregando esta cadena para luega hacer el salto de línea.
+                #alist.append(evento) # Agregando el valor del evento.
+                alist.append(rol+'\n') # Agregando el valor del evento.
+                #alist.append(siglas_evento+"/"+cedula+"-"+siglas_evento+"-"+rol+".pdf") # Agregando el nombre del fichero generado.
+                #alist.append(0)
+                #alist.append('\n') # Agregando esta cadena para luega hacer el salto de línea.
                 contador2 = contador2 + 1
 
                 # Variables de sustitución: nombre, cédula.
@@ -103,10 +105,11 @@ def main():
                 contador = contador + 1 # Contador que se agrega al nombre temporal del svg
                 os.chdir(siglas_evento) # Navegando hasta el directorio donde se van a guardar los certificados
                 mylist = alist
+                print mylist
                 # Ahora vamos a crear/escribir en data_final.csv los datos de la lista alist.
                 with open('data_final.csv', 'wb') as myfile:
-                    wr = csv.writer(myfile)
-                    wr.writerow(mylist)
+                    wr = csv.writer(myfile, escapechar=' ', quoting=csv.QUOTE_NONE)
+                    wr.writerow(alist)
                 generar(reemplazos,nombre,cedula,rol,contador)  #Función de generación de certificados
         listado.close()
         print("\n----------\n")
