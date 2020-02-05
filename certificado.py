@@ -105,7 +105,7 @@ def main():
                 contador = contador + 1 # Contador que se agrega al nombre temporal del svg
                 os.chdir(siglas_evento) # Navegando hasta el directorio donde se van a guardar los certificados
                 mylist = alist
-                print mylist
+                #print mylist
                 # Ahora vamos a crear/escribir en data_final.csv los datos de la lista alist.
                 with open('data_final.csv', 'wb') as myfile:
                     wr = csv.writer(myfile, escapechar=' ', quoting=csv.QUOTE_NONE)
