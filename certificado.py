@@ -17,6 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with certificado.py. If not, see <http://www.gnu.org/licenses/>.
 
+# Modificaciones del Ing. Argenis Osorio (argenisosorio10@gmail.com).
+
 import os
 import csv
 import time
