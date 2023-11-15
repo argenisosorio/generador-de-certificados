@@ -96,7 +96,9 @@ def main():
                     rol = 'Colaborador'
                 alist.append(cedula) # Agregando el valor de cédula a una lista.
                 #alist.append(evento) # Agregando el valor del evento.
-                alist.append(rol+'\n') # Agregando el valor del evento.
+                alist.append(evento) # Agregando el valor del evento.
+                alist.append(rol) # Agregando el valor del rol.
+                alist.append(siglas_evento+'/'+cedula+'-'+siglas_evento+"-"+rol+'.pdf'+'\n') # Agregando la suma de varios valores.
                 #alist.append(siglas_evento+"/"+cedula+"-"+siglas_evento+"-"+rol+".pdf") # Agregando el nombre del fichero generado.
                 #alist.append(0)
                 #alist.append('\n') # Agregando esta cadena para luega hacer el salto de línea.
@@ -107,11 +109,12 @@ def main():
                 contador = contador + 1 # Contador que se agrega al nombre temporal del svg
                 os.chdir(siglas_evento) # Navegando hasta el directorio donde se van a guardar los certificados
                 mylist = alist
-                #print mylist
+
                 # Ahora vamos a crear/escribir en data_final.csv los datos de la lista alist.
                 with open('data_final.csv', 'wb') as myfile:
                     wr = csv.writer(myfile, escapechar=' ', quoting=csv.QUOTE_NONE)
                     wr.writerow(alist)
+
                 generar(reemplazos,nombre,cedula,rol,contador)  #Función de generación de certificados
         listado.close()
         print("\n----------\n")
