@@ -36,7 +36,7 @@ Usaremos $ para describir los comandos que se usaran con usuario regular.
 Usaremos # para describir los comandos que se usaran con superusuario. 
 
 ```
-# apt-install python-pip
+# apt-install inkscape python-pip
 
 $ pip install pdfmerge
 
