@@ -26,7 +26,7 @@ import sys
 import traceback
 from subprocess import Popen
 
-def generar(reemplazos, nombre, cedula, rol, contador):
+def generar(reemplazos, nombre, cedula, rol, contador, siglas_evento):
     """
     Genera el certificado en formato pdf.
     """
@@ -62,12 +62,10 @@ def main():
         contador2 = 1
         with open('utils/participantes.csv', 'r') as listado:
             datos = csv.reader(listado, delimiter=',')
-            alist = []
             for row in datos:
                 if row[0].startswith('#'):
                     continue
                 nombre = row[0]
-                alist.append(nombre)
                 cedula = row[1]
                 if row[2] == '0':
                     rol = 'Profesor'
@@ -83,21 +81,15 @@ def main():
                     rol = 'Organizador'
                 if row[2] == '6':
                     rol = 'Colaborador'
-                alist.append(cedula)
-                alist.append(evento)
-                alist.append(rol)
-                alist.append(siglas_evento + '/' + cedula + '-' + siglas_evento + "-" + rol + '.pdf' + '\n')
-                contador2 = contador2 + 1
-
                 reemplazos = {'nombre_del_participante': nombre, 'cedula': cedula, 'Rol': rol}
                 contador = contador + 1
                 os.chdir(siglas_evento)
 
-                with open('data_final.csv', 'w', newline='') as myfile:
+                with open('data_final.csv', 'a', newline='') as myfile:
                     wr = csv.writer(myfile, escapechar=' ', quoting=csv.QUOTE_NONE)
-                    wr.writerow(alist)
+                    wr.writerow([nombre, cedula, evento, rol, siglas_evento + '/' + cedula + '-' + siglas_evento + "-" + rol + '.pdf'])
 
-                generar(reemplazos, nombre, cedula, rol, contador)  # Función de generación de certificados
+                generar(reemplazos, nombre, cedula, rol, contador, siglas_evento)  # Función de generación de certificados
 
         listado.close()
         print("\n----------\n")
