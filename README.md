@@ -2,6 +2,8 @@
 
 Basado en: [Generador en masa de certificados en pdf by David Hernández](https://github.com/davidhdz/generador-de-certificados)
 
+Versión de Python requerida: Python 3.X
+
 ## Documentación
 
 1) Descargar el proyecto, nos quedará el fichero comprimido generador-de-certificados-master.zip
@@ -29,6 +31,7 @@ Los valores de la columna Rol que es la tercera pueden ser:
 * 6 es Colaborador
 
 ### Probar el generador de certificados
+
 <b>Nota:</b>
 <br />
 Usaremos $ para describir los comandos que se usaran con usuario regular.
@@ -36,9 +39,7 @@ Usaremos $ para describir los comandos que se usaran con usuario regular.
 Usaremos # para describir los comandos que se usaran con superusuario. 
 
 ```
-# apt-install inkscape python-pip
-
-$ pip install pdfmerge
+# sudo apt install inkscape
 
 $ python certificado.py
 ```
