@@ -65,8 +65,8 @@ def main():
             for row in datos:
                 if row[0].startswith('#'):
                     continue
-                nombre = row[0]
-                cedula = row[1]
+                nombre = row[0].strip()  # Eliminar espacios en blanco al principio y al final
+                cedula = row[1].strip()
                 if row[2] == '0':
                     rol = 'Profesor'
                 if row[2] == '1':
