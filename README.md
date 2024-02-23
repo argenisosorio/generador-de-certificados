@@ -2,6 +2,8 @@
 
 Basado en: [Generador en masa de certificados en pdf by David Hernández](https://github.com/davidhdz/generador-de-certificados)
 
+Versión de Python requerida: Python 2.7.X
+
 ## Documentación
 
 1) Descargar el proyecto, nos quedará el fichero comprimido generador-de-certificados-master.zip
