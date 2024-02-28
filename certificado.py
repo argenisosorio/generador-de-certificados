@@ -39,7 +39,8 @@ def generar(reemplazos, nombre, cedula, rol, contador):
             salida.write(line)
     certsalida = cedula + '-' + siglas_evento + "-" + rol + '.pdf'  # Nombre del certificado pdf final
     print("-" + str(contador) + " Generando certificado" " para " + nombre)
-    x = Popen(['/usr/bin/inkscape', nombretmp, '-o', certsalida])  # Generación del certificado temporal.
+    # Generación del certificado temporal tomando en cuenta ambas láminas del svg.
+    x = Popen(['/usr/bin/inkscape', nombretmp, '-D', '--export-filename=' + certsalida, '--export-type=pdf'])
     x.wait()  # Esperar a que Inkscape termine antes de continuar
     print("\n-Removiendo archivos temporales...\n")
     time.sleep(5)

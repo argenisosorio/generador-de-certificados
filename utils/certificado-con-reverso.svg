@@ -14,7 +14,7 @@
    version="1.1"
    id="svg4924"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
-   sodipodi:docname="certificado.svg">
+   sodipodi:docname="certificado-con-reverso.svg">
   <defs
      id="defs4918">
     <clipPath
@@ -175,7 +175,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
      inkscape:cx="703.56201"
-     inkscape:cy="397.48774"
+     inkscape:cy="717.48774"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -200,6 +200,22 @@
        id="guide4856"
        inkscape:locked="false" />
     <sodipodi:guide
+       position="0.21600749,-22.131592"
+       orientation="0,-1"
+       id="guide383" />
+    <sodipodi:guide
+       position="0.21600749,-22.131592"
+       orientation="1,0"
+       id="guide385" />
+    <sodipodi:guide
+       position="279.4,-22.131592"
+       orientation="0,-1"
+       id="guide387" />
+    <sodipodi:guide
+       position="279.4,-22.131592"
+       orientation="1,0"
+       id="guide389" />
+    <sodipodi:guide
        position="0.35121919,215.9"
        orientation="0,-1"
        id="guide391" />
@@ -220,7 +236,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2100,6 +2116,57 @@
              x="135.09758"
              y="199.94968">del </tspan></text>
       </g>
+    </g>
+    <g
+       id="g1122">
+      <rect
+         style="fill:#ffffff;stroke-width:3.774"
+         id="rect381"
+         width="279.18399"
+         height="215.99297"
+         x="0.21600749"
+         y="319.13159" />
+      <rect
+         style="fill:#000000;stroke-width:1.97414"
+         id="rect1103"
+         width="215.993"
+         height="4.1367335"
+         x="319.13159"
+         y="-4.3527417"
+         transform="rotate(90)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="11.709332"
+         y="341.61191"
+         id="text397"><tspan
+           sodipodi:role="line"
+           x="11.709332"
+           y="341.61191"
+           style="stroke-width:0.264583"
+           id="tspan409">Reverso</tspan></text>
+      <rect
+         style="fill:#000000;stroke-width:2.24442"
+         id="rect1099"
+         width="279.18399"
+         height="4.1367335"
+         x="0.21600749"
+         y="319.13159" />
+      <rect
+         style="fill:#000000;stroke-width:2.24442"
+         id="rect1101"
+         width="279.18399"
+         height="4.1367335"
+         x="0.21600749"
+         y="530.98785" />
+      <rect
+         style="fill:#000000;stroke-width:1.97414"
+         id="rect1107"
+         width="215.993"
+         height="4.1367335"
+         x="319.13159"
+         y="-279.39999"
+         transform="rotate(90)" />
     </g>
   </g>
 </svg>
