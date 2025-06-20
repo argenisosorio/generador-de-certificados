@@ -82,7 +82,11 @@ def main():
                     rol = 'Organizador'
                 if row[2] == '6':
                     rol = 'Colaborador'
-                reemplazos = {'nombre_del_participante': nombre, 'cedula': cedula, 'Rol': rol}
+                reemplazos = {
+                    '{{nombre_del_participante}}': nombre,
+                    '{{cedula}}': cedula,
+                    '{{Rol}}': rol
+                }
                 contador = contador + 1
                 os.chdir(siglas_evento)
 
