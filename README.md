@@ -41,5 +41,5 @@ Usaremos # para describir los comandos que se usaran con superusuario.
 ```
 # sudo apt install inkscape
 
-$ python certificado.py
+$ python3 certificado.py
 ```
