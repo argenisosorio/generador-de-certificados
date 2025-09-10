@@ -1,4 +1,4 @@
-# 📄 Generador Masivo de Certificados en PDF
+# 📄 Generador masivo de Certificados en PDF
 
 Herramienta para generar certificados en formato PDF de manera masiva a partir de una lista de participantes, utilizando una plantilla personalizable en formato SVG.
 
