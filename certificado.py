@@ -91,8 +91,8 @@ def main():
                 os.chdir(siglas_evento)
 
                 with open('data_final.csv', 'a', newline='') as myfile:
-                    wr = csv.writer(myfile, escapechar=' ', quoting=csv.QUOTE_NONE)
-                    wr.writerow([nombre, cedula, evento, rol, siglas_evento + '/' + cedula + '-' + siglas_evento + "-" + rol + '.pdf'])
+                    wr = csv.writer(myfile)
+                    wr.writerow([nombre, cedula, evento, rol, siglas_evento + '/' + cedula + '-' + siglas_evento + "-" + rol + '.pdf', '2016-10-12 00:00:00'])
 
                 generar(reemplazos, nombre, cedula, rol, contador, siglas_evento)  # Función de generación de certificados
 
